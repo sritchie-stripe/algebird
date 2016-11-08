@@ -4,7 +4,7 @@ title:  "Abstract Algebra"
 section: "typeclasses"
 position: 1
 ---
-{% include_relative typeclasses/abstract_algebra.md %}
+{% include_relative typeclasses/typeclasses.md %}
 
 ## Index
 

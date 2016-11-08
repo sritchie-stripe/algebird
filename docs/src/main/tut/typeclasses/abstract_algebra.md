@@ -1,3 +1,9 @@
+---
+layout: docs
+title:  "Abstract Algebra"
+section: "typeclasses"
+---
+
 # Abstract Algebra
 
 Before getting into the details of Algebird, let's go through a few simple abstract algebra definitions.  Folks interested in more details may wish to refer to the excellent [*Notes on Abstract Algebra*](http://www.math.usm.edu/perry/old_classes/mat423fa11/notes_25aug2011.pdf) from University of Southern Mississipi professor John Perry.

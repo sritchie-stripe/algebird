@@ -8,7 +8,7 @@
 
 Abstract algebra for Scala. This code is targeted at building aggregation systems (via [Scalding](https://github.com/twitter/scalding) or [Apache Storm](http://storm.apache.org/)). It was originally developed as part of Scalding's Matrix API, where Matrices had values which are elements of Monoids, Groups, or Rings. Subsequently, it was clear that the code had broader application within Scalding and on other projects within Twitter.
 
-See the [current API documentation](http://twitter.github.com/algebird) for more information.
+See the [Algebird website](https://twitter.github.io/algebird) for more information.
 
 ### What can you do with this code?
 

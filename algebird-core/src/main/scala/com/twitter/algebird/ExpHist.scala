@@ -2,6 +2,7 @@ package com.twitter.algebird
 
 import java.lang.{ Long => JLong }
 import scala.annotation.tailrec
+import scala.collection.mutable.Builder
 
 /**
  * Exponential Histogram algorithm from
@@ -37,8 +38,8 @@ import scala.annotation.tailrec
  * @param total total ticks tracked. `total == buckets.map(_.size).sum`
  * @param time current timestamp of this instance.
  */
-case class ExpHist(conf: ExpHist.Config, buckets: Vector[ExpHist.Bucket], total: Long, time: Long) {
-  import ExpHist.{ Bucket, Canonical }
+case class ExpHist(conf: ExpHist.Config, buckets: Vector[ExpHist.Bucket], total: Long, time: ExpHist.Timestamp) {
+  import ExpHist.{ Bucket, Canonical, Timestamp }
 
   /**
    * Steps this instance forward to the new supplied time. Any
@@ -48,7 +49,7 @@ case class ExpHist(conf: ExpHist.Config, buckets: Vector[ExpHist.Bucket], total:
    * @param newTime the new current time.
    * @return ExpHist instance stepped forward to newTime.
    */
-  def step(newTime: Long): ExpHist =
+  def step(newTime: Timestamp): ExpHist =
     if (newTime <= time) this
     else {
       val (dropped, filtered) = conf.dropExpired(buckets, newTime)
@@ -58,15 +59,15 @@ case class ExpHist(conf: ExpHist.Config, buckets: Vector[ExpHist.Bucket], total:
   /**
    * Increment ExpHist by 1 at the supplied timestamp.
    */
-  def inc(timestamp: Long): ExpHist = add(1L, timestamp)
+  def inc(ts: Timestamp): ExpHist = add(1L, ts)
 
   /**
    * Increment ExpHist by delta at the supplied timestamp.
    */
-  def add(delta: Long, timestamp: Long): ExpHist = {
-    val self = step(timestamp)
+  def add(delta: Long, ts: Timestamp): ExpHist = {
+    val self = step(ts)
     if (delta == 0) self
-    else self.addAllWithoutStep(Vector(Bucket(delta, timestamp)), delta)
+    else self.addAllWithoutStep(Vector(Bucket(delta, ts)), delta)
   }
 
   /**
@@ -79,22 +80,26 @@ case class ExpHist(conf: ExpHist.Config, buckets: Vector[ExpHist.Bucket], total:
   def addAll(unsorted: Vector[Bucket]): ExpHist =
     if (unsorted.isEmpty) this
     else {
-      val sorted = unsorted.sorted(Ordering[Bucket].reverse)
-      val delta = sorted.map(_.size).sum
-      val timestamp = sorted.head.timestamp
-      if (delta == 0)
-        step(timestamp)
-      else {
+      val delta = unsorted.map(_.size).sum
+
+      if (delta == 0) {
+        step(unsorted.maxBy(_.timestamp).timestamp)
+      } else {
+        val sorted = unsorted.sorted(Ordering[Bucket].reverse)
+        val timestamp = sorted.head.timestamp
         addAllWithoutStep(sorted, delta).step(timestamp)
       }
     }
 
   /**
-    * Returns a [[Fold]] instance that uses `add` to accumulate deltas
-    * into this exponential histogram instance.
-    */
-  def fold: Fold[ExpHist, (Long, Long)] =
-    Fold.foldLeft(this) { case (e, (delta, timestamp)) => e.add(delta, timestamp) }
+   * Returns a [[Fold]] instance that uses `add` to accumulate deltas
+   * into this exponential histogram instance.
+   */
+  def fold: Fold[Bucket, ExpHist] =
+    Fold.foldMutable[Builder[Bucket, Vector[Bucket]], Bucket, ExpHist](
+      { case (b, bucket) => b += bucket },
+      { _ => Vector.newBuilder[Bucket] },
+      { x => addAll(x.result) })
 
   // This internal method assumes that the instance is stepped forward
   // already, and does NOT try to step internally. It also assumes
@@ -132,10 +137,10 @@ case class ExpHist(conf: ExpHist.Config, buckets: Vector[ExpHist.Bucket], total:
     else (total - (oldestBucketSize - 1) / 2.0)
 
   /**
-    * Returns an Approximate instance encoding the bounds and the
-    * closest long to the estimated count tracked by this instance.
-    */
-  def approx: Approximate[Long] =
+   * Returns an Approximate instance encoding the bounds and the
+   * closest long to the estimated sum tracked by this instance.
+   */
+  def approximateSum: Approximate[Long] =
     Approximate(lowerBoundSum, math.round(guess), upperBoundSum, 1.0)
 
   /**
@@ -152,10 +157,21 @@ case class ExpHist(conf: ExpHist.Config, buckets: Vector[ExpHist.Bucket], total:
 
 object ExpHist {
   /**
+   * Value class wrapper around timestamps (>= 0) used by each bucket.
+   */
+  case class Timestamp(toLong: Long) extends AnyVal {
+    def <=(r: Timestamp): Boolean = toLong <= r.toLong
+    def >(r: Timestamp): Boolean = toLong > r.toLong
+  }
+  object Timestamp {
+    implicit val ord: Ordering[Timestamp] = Ordering.by(_.toLong)
+  }
+
+  /**
    * @param size number of items tracked by this bucket.
    * @param timestamp timestamp of the most recent item tracked by this bucket.
    */
-  case class Bucket(size: Long, timestamp: Long)
+  case class Bucket(size: Long, timestamp: Timestamp)
 
   object Bucket {
     implicit val ord: Ordering[Bucket] = Ordering.by { b: Bucket => (b.timestamp, b.size) }
@@ -174,11 +190,11 @@ object ExpHist {
 
     // Returns the last timestamp before the window. any ts <= [the
     // returned timestamp] is outside the window.
-    def expiration(currTime: Long): Long = currTime - windowSize
+    def expiration(currTime: Timestamp): Timestamp = Timestamp(currTime.toLong - windowSize)
 
     // Drops all buckets with an expired timestamp, based on the
     // configured window and the supplied current time.
-    def dropExpired(buckets: Vector[Bucket], currTime: Long): (Long, Vector[Bucket]) =
+    def dropExpired(buckets: Vector[Bucket], currTime: Timestamp): (Long, Vector[Bucket]) =
       ExpHist.dropExpired(buckets, expiration(currTime))
 
     /**
@@ -186,21 +202,20 @@ object ExpHist {
      * into an empty exponential histogram instance configured with
      * this Config.
      */
-    def fold: Fold[ExpHist, (Long, Long)] =
-      Fold.foldLeft(ExpHist.empty(this)) { case (e, (delta, timestamp)) => e.add(delta, timestamp) }
+    def fold: Fold[Bucket, ExpHist] = ExpHist.empty(this).fold
   }
 
   /**
    * Returns an empty instance with the supplied Config.
    */
-  def empty(conf: Config): ExpHist = ExpHist(conf, Vector.empty, 0L, 0L)
+  def empty(conf: Config): ExpHist = ExpHist(conf, Vector.empty, 0L, Timestamp(0L))
 
   /**
    *  Returns an instance directly from a number `i`. All buckets in
    *  the returned ExpHist will have the same timestamp, equal to
    *  `ts`.
    */
-  def from(i: Long, ts: Long, conf: Config): ExpHist = {
+  def from(i: Long, ts: Timestamp, conf: Config): ExpHist = {
     val buckets = Canonical.bucketsFromLong(i, conf.l).map(Bucket(_, ts))
     ExpHist(conf, buckets, i, ts)
   }
@@ -210,7 +225,7 @@ object ExpHist {
    * @param cutoff buckets with ts <= cutoff are expired
    * @return the sum of evicted bucket sizes and the unexpired buckets
    */
-  def dropExpired(buckets: Vector[Bucket], cutoff: Long): (Long, Vector[Bucket]) = {
+  def dropExpired(buckets: Vector[Bucket], cutoff: Timestamp): (Long, Vector[Bucket]) = {
     val (dropped, remaining) = buckets.reverse.span(_.timestamp <= cutoff)
     (dropped.map(_.size).sum, remaining.reverse)
   }
@@ -384,12 +399,9 @@ object ExpHist {
      * @return The original s
      */
     def toLong: Long =
-      if (rep.isEmpty) 0L
-      else {
+      Monoid.sum(
         rep.iterator.zipWithIndex
-          .map { case (i, exp) => i.toLong << exp }
-          .reduce(_ + _)
-      }
+          .map { case (i, exp) => i.toLong << exp })
 
     /**
      * Expands out the l-canonical representation of some number s into
@@ -399,6 +411,9 @@ object ExpHist {
      * @return vector of powers of 2 (where ret.sum == the original s)
      */
     def toBuckets: Vector[Long] =
-      rep.zipWithIndex.flatMap { case (i, exp) => List.fill(i)(1L << exp) }
+      rep.iterator
+        .zipWithIndex
+        .flatMap { case (i, exp) => Iterator.fill(i)(1L << exp) }
+        .toVector
   }
 }

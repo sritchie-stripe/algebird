@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  "Exponential Histogram"
-section: "data"
+section: "approx"
 source: "algebird-core/src/main/scala/com/twitter/algebird/ExpHist.scala"
 scaladoc: "#com.twitter.algebird.ExpHist"
 ---

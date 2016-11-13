@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  "Count Min Sketch"
-section: "data"
+section: "approx"
 source: "algebird-core/src/main/scala/com/twitter/algebird/CountMinSketch.scala"
 scaladoc: "#com.twitter.algebird.CountMinSketch.scala"
 ---
@@ -13,7 +13,8 @@ Count-min sketch is a probablistic data structure that estimates the frequencies
 In Algebird, count-min sketches are represented as the abstract class CMS, along with the CMSMonoid class.
 
 ```tut:book
-import com.twitter.algebird.CMSHasherImplicits._
+import com.twitter.algebird._
+import CMSHasherImplicits._
 val DELTA = 1E-10
 val EPS = 0.001
 val SEED = 1
@@ -26,6 +27,24 @@ cms.frequency(1L).estimate
 cms.frequency(2L).estimate
 cms.frequency(3L).estimate
 ```
+
+## CMS Hasher
+
+/**
+ * The Count-Min sketch uses `d` (aka `depth`) pair-wise independent hash functions drawn from a universal hashing
+ * family of the form:
+ *
+ * `h(x) = [a * x + b (mod p)] (mod m)`
+ *
+ * As a requirement for using CMS you must provide an implicit `CMSHasher[K]` for the type `K` of the items you want to
+ * count.  Algebird ships with several such implicits for commonly used types `K` such as `Long` and [[scala.BigInt]].
+ *
+ * If your type `K` is not supported out of the box, you have two options: 1) You provide a "translation" function to
+ * convert items of your (unsupported) type `K` to a supported type such as [[Double]], and then use the `contramap`
+ * function of [[CMSHasher]] to create the required `CMSHasher[K]` for your type (see the documentation of `contramap`
+ * for an example); 2) You implement a `CMSHasher[K]` from scratch, using the existing CMSHasher implementations as a
+ * starting point.
+ */
 
 # Sketch Map
 

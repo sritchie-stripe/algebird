@@ -20,6 +20,8 @@ See the related issue: https://github.com/twitter/algebird/issues/235
 Here is the code example for computing a DecayedValue average:
 
 ```tut:book
+import com.twitter.algebird._
+
 val data = {
   val rnd = new scala.util.Random
   (1 to 100).map { _ => rnd.nextInt(1000).toDouble }.toSeq

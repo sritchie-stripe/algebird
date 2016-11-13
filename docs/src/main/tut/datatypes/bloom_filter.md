@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  "Bloom Filter"
-section: "data"
+section: "approx"
 source: "algebird-core/src/main/scala/com/twitter/algebird/BloomFilter.scala"
 scaladoc: "#com.twitter.algebird.BloomFilter.scala"
 ---

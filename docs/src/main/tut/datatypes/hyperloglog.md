@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  "HyperLogLog"
-section: "data"
+section: "approx"
 source: "algebird-core/src/main/scala/com/twitter/algebird/HyperLogLog.scala"
 scaladoc: "#com.twitter.algebird.HyperLogLog.scala"
 ---
@@ -27,6 +27,7 @@ The `HyperLogLogMonoid` class is the simplest way to create HLLs. `HyperLogLogMo
 The HyperLogLogMonoid constructor takes an Int `bits`, which represents the number of bits of the hash function that the HLL uses. The more bits you use, the more space the HLLs will take up, and the more precise your estimates will be. For a better understanding of the space-to-accuracy trade-off, see [this table](https://github.com/twitter/algebird/blob/develop/algebird-core/src/main/scala/com/twitter/algebird/HyperLogLog.scala#L197) or use one of the other strategies mentioned below, which allow you to specify the desired error.
 
 ```tut:book
+import com.twitter.algebird._
 val hllMonoid = new HyperLogLogMonoid(bits = 4)
 ```
 

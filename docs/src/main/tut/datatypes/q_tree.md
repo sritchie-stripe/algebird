@@ -56,9 +56,9 @@ For example, if we call `qtree.rangeSumBounds(0.1,0.2)` on the first QTree descr
 ### REPL Tour
 
 ```tut:book
+import com.twitter.algebird._
 val data = List(1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8)
 val seqQTree = data.map { QTree(_) }
-import com.twitter.algebird.QTreeSemigroup
 val qtSemigroup = new QTreeSemigroup[Long](6)
 val sum = qtSemigroup.sumOption(seqQTree).get
 val sum2 = seqQTree.reduce{qtSemigroup.plus(_,_)}

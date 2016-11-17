@@ -17,14 +17,6 @@ Algebird is, first and foremost, a library of data structures for large-scale an
   {% endif %}
 {% endfor %}
 
-## Data Types
-
-{% for x in site.pages %}
-  {% if x.section == 'data' %}
-- [{{x.title}}]({{site.baseurl}}{{x.url}})
-  {% endif %}
-{% endfor %}
-
 ## Combinators
 
 {% for x in site.pages %}
@@ -37,6 +29,14 @@ Algebird is, first and foremost, a library of data structures for large-scale an
 
 {% for x in site.pages %}
   {% if x.section == 'summer' %}
+- [{{x.title}}]({{site.baseurl}}{{x.url}})
+  {% endif %}
+{% endfor %}
+
+## DataTypes
+
+{% for x in site.pages %}
+  {% if x.section == 'data' %}
 - [{{x.title}}]({{site.baseurl}}{{x.url}})
   {% endif %}
 {% endfor %}

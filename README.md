@@ -61,7 +61,7 @@ A list of contributors to the project can be found here: [Contributors](https://
 
 ## Maven
 
-Algebird modules are available on maven central. The current groupid and version for all modules is, respectively, `"com.twitter"` and  `0.11.0`.
+Algebird modules are available on maven central. The current groupid and version for all modules is, respectively, `"com.twitter"` and  `0.12.2`.
 
 Current published artifacts are
 

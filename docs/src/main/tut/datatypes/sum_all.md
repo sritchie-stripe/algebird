@@ -1,6 +1,6 @@
 ---
 layout: docs
-title:  "SummingCache"
+title:  "SumAll"
 section: "summer"
 source: "algebird-core/src/main/scala/com/twitter/algebird/StatefulSummer.scala"
 scaladoc: "#com.twitter.algebird.StatefulSummer.scala"

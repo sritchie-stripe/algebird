@@ -8,19 +8,51 @@ options:
     url: datatypes.html
     menu_type: data
 
-  - title: Collections
-    url: datatypes/collections.html
+  - title: Combinators
+    url: datatypes/combinator.html
     menu_type: data
-    menu_section: collections
+    menu_section: combinator
 
     nested_options:
-      - title: Scala Collections
-        url: datatypes/collections.html
-        menu_type: collections
+     - title: Scala Collections
+       url: datatypes/combinator/collections.html
+       menu_type: collections
 
-      - title: Java Collections
-        url: datatypes/java_collections.html
-        menu_type: collections
+     - title: Java Collections
+       url: datatypes/combinator/java_collections.html
+       menu_type: collections
+
+     - title: Option Monoid
+       url: datatypes/combinator/option_monoid.html
+       menu_type: collections
+
+     - title: Case Class Algebra
+       url: datatypes/combinator/caseclass.html
+       menu_section: combinator
+
+     - title: Cuber
+       url: datatypes/combinator/cuber.html
+       menu_section: combinator
+
+     - title: Roller
+       url: datatypes/combinator/roller.html
+       menu_section: combinator
+
+     - title: Eventually
+       url: datatypes/combinator/eventually.html
+       menu_section: combinator
+
+     - title: Priority
+       url: datatypes/combinator/priority.html
+       menu_section: combinator
+
+     - title: Product/Tuple Algebra
+       url: datatypes/combinator/product_algebra.html
+       menu_section: combinator
+
+     - title: Monoid Statistics
+       url: datatypes/combinator/monoid_statistics.html
+       menu_section: combinator
 
   - title: Approximate Data Types
     url: datatypes/approx.html
@@ -64,40 +96,6 @@ options:
        url: datatypes/approx/space_saver.html
        menu_section: approx
 
-  - title: Combinators
-    url: datatypes/combinator.html
-    menu_type: data
-    menu_section: combinator
-
-    nested_options:
-     - title: Case Class Algebra
-       url: datatypes/combinator/caseclass.html
-       menu_section: combinator
-
-     - title: Cuber
-       url: datatypes/combinator/cuber.html
-       menu_section: combinator
-
-     - title: Roller
-       url: datatypes/combinator/roller.html
-       menu_section: combinator
-
-     - title: Eventually
-       url: datatypes/combinator/eventually.html
-       menu_section: combinator
-
-     - title: Priority
-       url: datatypes/combinator/priority.html
-       menu_section: combinator
-
-     - title: Product/Tuple Algebra
-       url: datatypes/combinator/product_algebra.html
-       menu_section: combinator
-
-     - title: Monoid Statistics
-       url: datatypes/combinator/monoid_statistics.html
-       menu_section: combinator
-
   - title: Summers
     url: datatypes/summer.html
     menu_type: data
@@ -128,6 +126,20 @@ options:
         url: datatypes/summer/summingqueue.html
         menu_section: summer
 
+  - title: Ordered Semigroups
+    url: datatypes/min_and_max.html
+    menu_type: data
+    menu_section: ordered
+
+    nested_options:
+     - title: First and Last
+       url: datatypes/first_and_last.html
+       menu_type: data
+
+     - title: Min and Max
+       url: datatypes/min_and_max.html
+       menu_section: ordered
+
   - title: Adaptive Matrix
     url: datatypes/adaptive_matrix.html
     menu_type: data
@@ -156,10 +168,6 @@ options:
     url: datatypes/decayed_vector.html
     menu_type: data
 
-  - title: First and Last
-    url: datatypes/first_and_last.html
-    menu_type: data
-
   - title: First Five Moments
     url: datatypes/five_moments.html
     menu_type: data
@@ -170,10 +178,6 @@ options:
 
   - title: Interval
     url: datatypes/interval.html
-    menu_type: data
-
-  - title: Min and Max
-    url: datatypes/min_and_max.html
     menu_type: data
 
   - title: Min Plus Algebra

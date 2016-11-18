@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "MinHasher"
-section: "approx"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/MinHasher.scala"
-scaladoc: "#com.twitter.algebird.MinHasher.scala"
+scaladoc: "#com.twitter.algebird.MinHasher"
 ---
 
 Podcast link:

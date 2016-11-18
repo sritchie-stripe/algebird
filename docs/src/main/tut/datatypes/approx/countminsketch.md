@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "Count Min Sketch"
-section: "approx"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/CountMinSketch.scala"
-scaladoc: "#com.twitter.algebird.CountMinSketch.scala"
+scaladoc: "#com.twitter.algebird.CountMinSketch"
 ---
 
 # Count Min Sketch

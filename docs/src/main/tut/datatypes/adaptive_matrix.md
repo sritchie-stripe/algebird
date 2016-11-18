@@ -3,7 +3,7 @@ layout: docs
 title:  "Adaptive Matrix"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/matrix/AdaptiveMatrix.scala"
-scaladoc: "#com.twitter.algebird.matrix.AdaptiveMatrix.scala"
+scaladoc: "#com.twitter.algebird.matrix.AdaptiveMatrix"
 ---
 
 # AdaptiveMatrix

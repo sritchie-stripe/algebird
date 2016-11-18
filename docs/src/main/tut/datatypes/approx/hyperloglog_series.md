@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "HyperLogLog Series"
-section: "approx"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/HyperLogLogSeries.scala"
-scaladoc: "#com.twitter.algebird.HyperLogLogSeries.scala"
+scaladoc: "#com.twitter.algebird.HyperLogLogSeries"
 ---
 
 ### [HyperLogLogSeries](https://github.com/twitter/algebird/blob/develop/algebird-core/src/main/scala/com/twitter/algebird/HyperLogLogSeries.scala)

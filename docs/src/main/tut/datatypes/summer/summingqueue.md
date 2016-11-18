@@ -1,10 +1,11 @@
 ---
 layout: docs
 title:  "SummingQueue"
-section: "summer"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/SummingQueue.scala"
-scaladoc: "#com.twitter.algebird.SummingQueue.scala"
+scaladoc: "#com.twitter.algebird.SummingQueue"
 ---
+
 - SummingQueue - used as intermediate buffer in SB realtime (buffer)
 
 /**

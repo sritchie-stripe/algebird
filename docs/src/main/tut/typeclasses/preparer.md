@@ -3,7 +3,7 @@ layout: docs
 title:  "Preparer"
 section: "typeclasses"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Preparer.scala"
-scaladoc: "#com.twitter.algebird.Preparer.scala"
+scaladoc: "#com.twitter.algebird.Preparer"
 ---
 
 # Preparer

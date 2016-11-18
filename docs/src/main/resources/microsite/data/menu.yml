@@ -8,6 +8,20 @@ options:
     url: datatypes.html
     menu_type: data
 
+  - title: Collections
+    url: datatypes/collections.html
+    menu_type: data
+    menu_section: collections
+
+    nested_options:
+      - title: Scala Collections
+        url: datatypes/collections.html
+        menu_type: collections
+
+      - title: Java Collections
+        url: datatypes/java_collections.html
+        menu_type: collections
+
   - title: Approximate Data Types
     url: datatypes/approx.html
     menu_type: data
@@ -15,39 +29,39 @@ options:
 
     nested_options:
      - title: Approximate
-       url: datatypes/approximate.html
+       url: datatypes/approx/approximate.html
        menu_section: approx
 
      - title: Bloom Filter
-       url: datatypes/bloom_filter.html
+       url: datatypes/approx/bloom_filter.html
        menu_section: approx
 
      - title: Count Min Sketch
-       url: datatypes/countminsketch.html
+       url: datatypes/approx/countminsketch.html
        menu_section: approx
 
      - title: Exponential Histogram
-       url: datatypes/exponential_histogram.html
+       url: datatypes/approx/exponential_histogram.html
        menu_section: approx
 
      - title: HyperLogLog
-       url: datatypes/hyperloglog.html
+       url: datatypes/approx/hyperloglog.html
        menu_section: approx
 
      - title: HyperLogLog Series
-       url: datatypes/hyperloglog_series.html
+       url: datatypes/approx/hyperloglog_series.html
        menu_section: approx
 
      - title: MinHasher
-       url: datatypes/min_hasher.html
+       url: datatypes/approx/min_hasher.html
        menu_section: approx
 
      - title: Q Tree
-       url: datatypes/q_tree.html
+       url: datatypes/approx/q_tree.html
        menu_section: approx
 
      - title: SpaceSaver
-       url: datatypes/space_saver.html
+       url: datatypes/approx/space_saver.html
        menu_section: approx
 
   - title: Combinators
@@ -57,27 +71,31 @@ options:
 
     nested_options:
      - title: Case Class Algebra
-       url: datatypes/caseclass.html
+       url: datatypes/combinator/caseclass.html
        menu_section: combinator
 
      - title: Cuber
-       url: datatypes/cuber.html
+       url: datatypes/combinator/cuber.html
        menu_section: combinator
 
      - title: Roller
-       url: datatypes/roller.html
+       url: datatypes/combinator/roller.html
        menu_section: combinator
 
      - title: Eventually
-       url: datatypes/eventually.html
+       url: datatypes/combinator/eventually.html
        menu_section: combinator
 
      - title: Priority
-       url: datatypes/priority.html
+       url: datatypes/combinator/priority.html
        menu_section: combinator
 
      - title: Product Algebra
-       url: datatypes/product_algebra.html
+       url: datatypes/combinator/product_algebra.html
+       menu_section: combinator
+
+     - title: Monoid Statistics
+       url: datatypes/combinator/monoid_statistics.html
        menu_section: combinator
 
   - title: Summers
@@ -87,29 +105,28 @@ options:
 
     nested_options:
       - title: AdaptiveCache
-        url: datatypes/adaptive_cache.html
+        url: datatypes/summer/adaptive_cache.html
         menu_section: summer
 
       - title: Batched
-        url: datatypes/batched.html
+        url: datatypes/summer/batched.html
         menu_section: summer
 
       - title: SumAll
-        url: datatypes/sum_all.html
+        url: datatypes/summer/sum_all.html
         menu_section: summer
 
       - title: SummingCache
-        url: datatypes/summingcache.html
+        url: datatypes/summer/summingcache.html
         menu_section: summer
 
       - title: SummingIterator
-        url: datatypes/summingiterator.html
+        url: datatypes/summer/summingiterator.html
         menu_section: summer
 
       - title: SummingQueue
-        url: datatypes/summingqueue.html
+        url: datatypes/summer/summingqueue.html
         menu_section: summer
-
 
   - title: Adaptive Matrix
     url: datatypes/adaptive_matrix.html
@@ -143,7 +160,7 @@ options:
     url: datatypes/first_and_last.html
     menu_type: data
 
-  - title: Five Moments
+  - title: First Five Moments
     url: datatypes/five_moments.html
     menu_type: data
 
@@ -153,10 +170,6 @@ options:
 
   - title: Interval
     url: datatypes/interval.html
-    menu_type: data
-
-  - title: Java Collections
-    url: datatypes/java_collections.html
     menu_type: data
 
   - title: Min and Max
@@ -183,10 +196,6 @@ options:
     url: datatypes/sgd.html
     menu_type: data
 
-  - title: Statistics Monoid
-    url: datatypes/statistics_monoid.html
-    menu_type: data
-
   - title: TopK
     url: datatypes/topk.html
     menu_type: data
@@ -201,7 +210,7 @@ options:
     menu_section: typeclasses
 
   - title: Abstract Algebra
-    url: typeclasses/semigroup.html
+    url: typeclasses/abstract_algebra.html
     menu_type: typeclasses
     menu_section: abstractalgebra
 
@@ -219,7 +228,7 @@ options:
        url: typeclasses/ring.html
        menu_section: abstractalgebra
 
-  - title: Aggregator and Preparer
+  - title: Aggregator, Preparer, Fold
     url: typeclasses/aggregator.html
     menu_type: typeclasses
     menu_section: aggandprepare
@@ -228,9 +237,14 @@ options:
      - title: Aggregator
        url: typeclasses/aggregator.html
        menu_section: aggandprepare
+
      - title: Preparer
        url: typeclasses/preparer.html
        menu_section: aggandprepare
+
+     - title: Fold
+       url: typeclasses/fold.html
+       menu_type: typeclasses
 
   - title: Monad and Friends
     url: typeclasses/functor.html
@@ -241,9 +255,11 @@ options:
      - title: Functor
        url: typeclasses/functor.html
        menu_section: monadandfriends
+
      - title: Applicative
        url: typeclasses/applicative.html
        menu_section: monadandfriends
+
      - title: Monad
        url: typeclasses/monad.html
        menu_section: monadandfriends
@@ -260,14 +276,6 @@ options:
     url: typeclasses/hash128.html
     menu_type: typeclasses
 
-  - title: Fold
-    url: typeclasses/fold.html
-    menu_type: typeclasses
-
   - title: Buffered
     url: typeclasses/buffered.html
-    menu_type: typeclasses
-
-  - title: StatefulSummer
-    url: typeclasses/stateful_summer.html
     menu_type: typeclasses

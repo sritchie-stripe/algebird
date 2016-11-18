@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "SpaceSaver"
-section: "approx"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/SpaceSaver.scala"
-scaladoc: "#com.twitter.algebird.SpaceSaver.scala"
+scaladoc: "#com.twitter.algebird.SpaceSaver"
 ---
 
 # SpaceSaver, ie StreamSummary

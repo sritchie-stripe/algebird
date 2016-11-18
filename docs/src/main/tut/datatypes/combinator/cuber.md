@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "Cuber"
-section: "combinator"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/macros/Cuber.scala"
-scaladoc: "#com.twitter.algebird.macros.Cuber.scala"
+scaladoc: "#com.twitter.algebird.macros.Cuber"
 ---
 
 # Cuber

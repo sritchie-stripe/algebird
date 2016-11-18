@@ -3,7 +3,7 @@ layout: docs
 title:  "Group"
 section: "typeclasses"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Group.scala"
-scaladoc: "#com.twitter.algebird.Group.scala"
+scaladoc: "#com.twitter.algebird.Group"
 ---
 
 # Group

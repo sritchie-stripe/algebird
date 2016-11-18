@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "Product/Tuple Algebra"
-section: "combinator"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/GeneratedAbstractAlgebra.scala"
-scaladoc: "#com.twitter.algebird.GeneratedAbstractAlgebra.scala"
+scaladoc: "#com.twitter.algebird.GeneratedAbstractAlgebra"
 ---
 
 # Generated Abstract Algebra

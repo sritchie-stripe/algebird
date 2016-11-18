@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "Eventually"
-section: "combinator"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Eventually.scala"
-scaladoc: "#com.twitter.algebird.Eventually.scala"
+scaladoc: "#com.twitter.algebird.Eventually"
 ---
 
 ### Eventually

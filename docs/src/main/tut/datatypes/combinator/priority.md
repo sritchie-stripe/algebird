@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "Priority"
-section: "combinator"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Priority.scala"
-scaladoc: "#com.twitter.algebird.Priority.scala"
+scaladoc: "#com.twitter.algebird.Priority"
 ---
 
 ## Priority

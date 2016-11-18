@@ -3,7 +3,7 @@ layout: docs
 title:  "Metric"
 section: "typeclasses"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Metric.scala"
-scaladoc: "#com.twitter.algebird.Metric.scala"
+scaladoc: "#com.twitter.algebird.Metric"
 ---
 
 ## Metric

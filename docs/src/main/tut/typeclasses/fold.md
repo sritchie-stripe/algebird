@@ -3,7 +3,7 @@ layout: docs
 title:  "Fold"
 section: "typeclasses"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Fold.scala"
-scaladoc: "#com.twitter.algebird.Fold.scala"
+scaladoc: "#com.twitter.algebird.Fold"
 ---
 
 ## Fold

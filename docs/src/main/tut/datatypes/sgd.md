@@ -3,7 +3,7 @@ layout: docs
 title:  "Stochastic Gradient Descent"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/SGDMonoid.scala"
-scaladoc: "#com.twitter.algebird.SGDMonoid.scala"
+scaladoc: "#com.twitter.algebird.SGDMonoid"
 ---
 
 # Stochastic Gradient Descent

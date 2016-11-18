@@ -3,7 +3,7 @@ layout: docs
 title:  "SetDiff"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/SetDiff.scala"
-scaladoc: "#com.twitter.algebird.SetDiff.scala"
+scaladoc: "#com.twitter.algebird.SetDiff"
 ---
 
 # SetDiff

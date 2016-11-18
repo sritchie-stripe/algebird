@@ -3,7 +3,7 @@ layout: docs
 title:  "Bytes"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Bytes.scala"
-scaladoc: "#com.twitter.algebird.Bytes.scala"
+scaladoc: "#com.twitter.algebird.Bytes"
 ---
 
 A wrapper for `Array[Byte]` that provides sane implementations of `hashCode`, `equals`, and `toString`.  The wrapped array of bytes is assumed to be never modified.

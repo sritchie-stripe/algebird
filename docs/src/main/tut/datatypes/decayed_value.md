@@ -3,7 +3,7 @@ layout: docs
 title:  "Decayed Value"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/DecayedValue.scala"
-scaladoc: "#com.twitter.algebird.DecayedValue.scala"
+scaladoc: "#com.twitter.algebird.DecayedValue"
 ---
 
 

@@ -3,7 +3,7 @@ layout: docs
 title:  "Ring"
 section: "typeclasses"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Ring.scala"
-scaladoc: "#com.twitter.algebird.Ring.scala"
+scaladoc: "#com.twitter.algebird.Ring"
 ---
 
 ## Ring

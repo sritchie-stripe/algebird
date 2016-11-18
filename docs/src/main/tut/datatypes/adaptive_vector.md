@@ -3,7 +3,7 @@ layout: docs
 title:  "Adaptive Vector"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/AdaptiveVector.scala"
-scaladoc: "#com.twitter.algebird.AdaptiveVector.scala"
+scaladoc: "#com.twitter.algebird.AdaptiveVector"
 ---
 
 ### AdaptiveVector

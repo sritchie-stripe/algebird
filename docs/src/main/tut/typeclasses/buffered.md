@@ -3,7 +3,7 @@ layout: docs
 title:  "Buffered"
 section: "typeclasses"
 source: "algebird-core/src/main/scala/com/twitter/algebird/BufferedOperation.scala"
-scaladoc: "#com.twitter.algebird.Buffered.scala"
+scaladoc: "#com.twitter.algebird.Buffered"
 ---
 
 # Buffered

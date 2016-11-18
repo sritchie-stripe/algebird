@@ -3,7 +3,7 @@ layout: docs
 title:  "Monoid"
 section: "typeclasses"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Monoid.scala"
-scaladoc: "#com.twitter.algebird.Monoid.scala"
+scaladoc: "#com.twitter.algebird.Monoid"
 ---
 
 # Monoid

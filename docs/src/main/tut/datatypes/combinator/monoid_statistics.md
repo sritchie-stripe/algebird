@@ -3,10 +3,10 @@ layout: docs
 title:  "Statistics Monoid"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/statistics/Statistics.scala"
-scaladoc: "#com.twitter.algebird.statistics.Statistics.scala"
+scaladoc: "#com.twitter.algebird.statistics.Statistics"
 ---
 
-# StatisticsMonoid
+# Monoid Statistics
 
 These wrappers can be used to collect statistics around usage of monoids They are thread safe unless false is passed to the constructor (to remove overhead when threads are not used).
 

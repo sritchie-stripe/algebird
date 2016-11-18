@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "Q Tree"
-section: "approx"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/QTree.scala"
-scaladoc: "#com.twitter.algebird.QTree.scala"
+scaladoc: "#com.twitter.algebird.QTree"
 ---
 
 # Q Tree

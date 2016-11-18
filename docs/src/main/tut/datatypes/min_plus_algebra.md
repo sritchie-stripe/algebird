@@ -3,7 +3,7 @@ layout: docs
 title:  "Min Plus Algebra"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/MinPlus.scala"
-scaladoc: "#com.twitter.algebird.MinPlus.scala"
+scaladoc: "#com.twitter.algebird.MinPlus"
 ---
 
 # Min Plus Algebra

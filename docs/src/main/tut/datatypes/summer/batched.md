@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "Batched"
-section: "summer"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/Batched.scala"
-scaladoc: "#com.twitter.algebird.Batched.scala"
+scaladoc: "#com.twitter.algebird.Batched"
 ---
 
 /**

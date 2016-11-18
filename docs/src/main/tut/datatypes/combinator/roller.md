@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "Roller"
-section: "combinator"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/macros/Roller.scala"
-scaladoc: "#com.twitter.algebird.macros.Roller.scala"
+scaladoc: "#com.twitter.algebird.macros.Roller"
 ---
 
 # Roller

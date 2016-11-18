@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "SummingIterator"
-section: "summer"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/SummingIterator.scala"
-scaladoc: "#com.twitter.algebird.SummingIterator.scala"
+scaladoc: "#com.twitter.algebird.SummingIterator"
 ---
 
 /**

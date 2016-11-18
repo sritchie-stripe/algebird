@@ -1,9 +1,9 @@
 ---
 layout: docs
 title:  "AdaptiveCache"
-section: "summer"
+section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/SummingCache.scala"
-scaladoc: "#com.twitter.algebird.SummingCache.scala"
+scaladoc: "#com.twitter.algebird.SummingCache"
 ---
 
 # AdaptiveCache

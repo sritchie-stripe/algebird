@@ -1,7 +1,9 @@
 ---
 layout: docs
-title:  "Approximate Datatypes"
+title:  "Approximate Data Types"
 section: "data"
 ---
 
-This is some text.
+# Approximate Data Types
+
+These are approximate!

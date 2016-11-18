@@ -3,7 +3,7 @@ layout: docs
 title:  "RightFolded"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/RightFolded.scala"
-scaladoc: "#com.twitter.algebird.RightFolded.scala"
+scaladoc: "#com.twitter.algebird.RightFolded"
 ---
 
 # RightFolded

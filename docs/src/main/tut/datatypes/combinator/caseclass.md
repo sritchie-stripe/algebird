@@ -6,4 +6,6 @@ source: "algebird-core/src/main/scala/com/twitter/algebird/macros/caseclass.scal
 scaladoc: "#com.twitter.algebird.macros.caseclass"
 ---
 
-# Case Class Macros
+# Case Class Algebra
+
+Reference macros.

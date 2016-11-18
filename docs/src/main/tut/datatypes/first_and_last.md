@@ -6,6 +6,6 @@ source: "algebird-core/src/main/scala/com/twitter/algebird/OrderedSemigroup.scal
 scaladoc: "#com.twitter.algebird.OrderedSemigroup"
 ---
 
-# First, Last
+# First and Last
 
 https://github.com/twitter/algebird/blob/develop/algebird-core/src/main/scala/com/twitter/algebird/OrderedSemigroup.scala

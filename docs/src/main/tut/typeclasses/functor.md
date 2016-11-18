@@ -8,12 +8,13 @@ scaladoc: "#com.twitter.algebird.Functor"
 
 # Functor
 
-Note - don't use this, use cats.
+(Note - don't use this, use cats.)
 
-/**
- * Simple implementation of a Functor type-class.
- *
- * Laws Functors must follow:
- *  map(m)(id) == m
- *  map(m)(f andThen g) == map(map(m)(f))(g)
- */
+Simple implementation of a Functor type-class.
+
+Laws Functors must follow:
+
+```scala
+map(m)(id) == m
+map(m)(f andThen g) == map(map(m)(f))(g)
+```

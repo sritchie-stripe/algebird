@@ -6,7 +6,6 @@ source: "algebird-core/src/main/scala/com/twitter/algebird/DecayedValue.scala"
 scaladoc: "#com.twitter.algebird.DecayedValue"
 ---
 
-
 # Decayed Value (aka. moving average)
 
 A DecayedValue can be approximately computed into a moving average. Please see an explanation of different averages here: [The Decaying Average](http://donlehmanjr.com/Science/03%20Decay%20Ave/032.htm).

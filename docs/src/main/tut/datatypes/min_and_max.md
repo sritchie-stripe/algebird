@@ -6,7 +6,9 @@ source: "algebird-core/src/main/scala/com/twitter/algebird/OrderedSemigroup.scal
 scaladoc: "#com.twitter.algebird.OrderedSemigroup"
 ---
 
-# Min
+# Min and Max
+
+## Min
 
 ```tut:book
 import com.twitter.algebird._
@@ -14,7 +16,7 @@ import Operators._
 Min(10) + Min(20) + Min(30)
 ```
 
-# Max
+## Max
 
 Example from <http://www.michael-noll.com/blog/2013/12/02/twitter-algebird-monoid-monad-for-large-scala-data-analytics/>
 

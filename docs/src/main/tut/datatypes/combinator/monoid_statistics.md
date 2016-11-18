@@ -1,6 +1,6 @@
 ---
 layout: docs
-title:  "Statistics Monoid"
+title:  "Monoid Statistics"
 section: "data"
 source: "algebird-core/src/main/scala/com/twitter/algebird/statistics/Statistics.scala"
 scaladoc: "#com.twitter.algebird.statistics.Statistics"

@@ -6,6 +6,6 @@ source: "algebird-core/src/main/scala/com/twitter/algebird/Aggregator.scala"
 scaladoc: "#com.twitter.algebird.Aggregator.scala"
 ---
 
-## Aggregator
+# Aggregator
 
-Crucial - prepare, agg, present
+Crucial - prepare, agg, present.

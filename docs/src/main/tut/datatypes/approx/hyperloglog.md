@@ -6,7 +6,7 @@ source: "algebird-core/src/main/scala/com/twitter/algebird/HyperLogLog.scala"
 scaladoc: "#com.twitter.algebird.HyperLogLog"
 ---
 
-# Hyperloglog
+# HyperLogLog
 
 HyperLogLog is an approximation algorithm that estimates the number of distinct elements in a multiset using a constant amount of memory. (See https://en.wikipedia.org/wiki/HyperLogLog)
 

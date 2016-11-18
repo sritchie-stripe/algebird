@@ -6,6 +6,6 @@ source: "algebird-core/src/main/scala/com/twitter/algebird/StatefulSummer.scala"
 scaladoc: "#com.twitter.algebird.StatefulSummer"
 ---
 
-# SumAll (summers)
+# SumAll
 
-# BufferedSumAll (summesr)
+# BufferedSumAll

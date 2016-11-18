@@ -6,6 +6,6 @@ source: "algebird-core/src/main/scala/com/twitter/algebird/DecayedVector.scala"
 scaladoc: "#com.twitter.algebird.DecayedVector"
 ---
 
-### DecayedVector
+# DecayedVector
 
-Lets you build container classes with DecayedValue.
+Lets you build container classes with [`DecayedValue`]("decayed_value.html").
